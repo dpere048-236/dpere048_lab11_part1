@@ -62,7 +62,7 @@ DDRD = 0xFF; PORTD = 0x00; //port d is outputs
 static _task task1, task2, task3, task4;
 _task *tasks[] = {&task1, &task2, &task3, &task4};
 const unsigned short numTasks = sizeof(tasks)/sizeof(task*);
-
+unsigned long int findGCD
     /* Insert your solution below */
     while (1) {
 
