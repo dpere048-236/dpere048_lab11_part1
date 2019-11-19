@@ -49,10 +49,19 @@ int displaySMTick(int state){
 	PORTB = tmpA;
 		break;
 		}
+return state;
 }
 
 int main(void) {
     /* Insert DDR and PORT initializations */
+DDRA = 0xFF; PORTA = 0x00; //inputs
+DDRB = 0x00; PORTB = 0xFF; //outputs
+DDRC = 0xF0; PORTC = 0x0F; //pins pc7-4 are inputs while pinsc3-0 are outputs
+DDRD = 0xFF; PORTD = 0x00; //port d is outputs
+
+static _task task1, task2, task3, task4;
+_task *tasks[] = {&task1, &task2, &task3, &task4};
+const unsigned short numTasks = sizeof(tasks)/sizeof(task*);
 
     /* Insert your solution below */
     while (1) {
